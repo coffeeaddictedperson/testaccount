@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/styles/UserDataPreview.scss"],"names":[],"mappings":"AAAA;AACA,qBAAqB;;AAErB;AACA;AACA,yBAAyB","file":"app.css","sourcesContent":[".custom_pos-rel {\n  position: relative; }\n\n.custom_stars {\n  display: inline-block;\n  vertical-align: middle; }\n"],"sourceRoot":""}
