@@ -5,7 +5,7 @@ const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     entry: {
-        app: ['./src/App.ts'],
+        app: ['./src/js/App.ts'],
         vendor: ['react', 'react-dom']
     },
     output: {
@@ -34,6 +34,11 @@ module.exports = {
                     'sass-loader',
                 ],
             },
+            {
+                options: {
+                    configFile: path.join(__dirname, "tsconfig.json")
+                }
+            }
         ]
     },
 
