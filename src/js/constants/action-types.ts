@@ -1,2 +1,2 @@
-export const TURN_OFF_EDIT_MODE     = "TURN_OFF_EDIT_MODE";
-export const TURN_ON_EDIT_MODE      = "TURN_ON_EDIT_MODE";
+export const TOGGLE_EDIT_MODE     = "TOGGLE_EDIT_MODE";
+export type TOGGLE_EDIT_MODE      = typeof TOGGLE_EDIT_MODE;

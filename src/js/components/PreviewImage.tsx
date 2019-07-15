@@ -1,7 +1,4 @@
 import * as React from "react";
-import * as Redux from 'redux'
-
-//import { MyReduxState } from './reducer.ts'
 
 import {EditButton} from './EditButton';
 
