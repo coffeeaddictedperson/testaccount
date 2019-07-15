@@ -1,5 +1,7 @@
 import * as React from 'react';
-import { should } from 'chai';
+import chai from 'chai';
+const should = chai.should();
+
 import {EditButton} from "../../src/js/components/EditButton";
 
 describe('Components', function() {
