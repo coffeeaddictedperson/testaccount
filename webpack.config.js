@@ -33,11 +33,6 @@ module.exports = {
                     'css-loader',
                     'sass-loader',
                 ],
-            },
-            {
-                options: {
-                    configFile: path.join(__dirname, "tsconfig.json")
-                }
             }
         ]
     },

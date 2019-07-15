@@ -14,12 +14,9 @@
   "license": "ISC",
   "devDependencies": {
     "@types/mocha": "^5.2.7",
-    "@types/react": "^16.8.23",
-    "@types/react-dom": "^16.8.4",
     "chai": "^4.2.0",
     "mocha": "^6.1.4",
-    "sinon": "^7.3.2",
-    "source-map-loader": "^0.2.4"
+    "sinon": "^7.3.2"
   },
   "dependencies": {
     "@babel/core": "^7.5.4",
@@ -28,6 +25,8 @@
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
     "@types/chai": "^4.1.7",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.4",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.0.0",
@@ -42,6 +41,7 @@
     "react-materialize": "^3.3.3",
     "redux": "^4.0.4",
     "sass-loader": "^7.1.0",
+    "source-map-loader": "^0.2.4",
     "typescript": "^3.5.3",
     "webpack": "^4.35.3",
     "webpack-cli": "^3.3.5"
