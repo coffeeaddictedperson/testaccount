@@ -1,18 +1,20 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "jsx": "react",
-    "sourceMap": true,
-    "outDir": "./public/",
-    "removeComments": true,
-    "noImplicitAny": true,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "preserveConstEnums": true
+    "jsx": "react",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "./public/",
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "es6"
   },
   "include": [
     "./src/**/*",
     "./tests/**/*"
   ]
 }
+

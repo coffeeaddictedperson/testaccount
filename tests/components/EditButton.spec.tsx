@@ -1,7 +1,6 @@
 import * as React from 'react';
-import 'mocha';
-import {EditButton} from "../../src/js/components/EditButton";
 import { should } from 'chai';
+import {EditButton} from "../../src/js/components/EditButton";
 
 describe('Components', function() {
     describe('EditButton', function() {
