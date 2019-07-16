@@ -5,15 +5,15 @@ import { IStoreState } from '../types/index';
 import { toggleEditMode } from '../actions/editMode';
 
 interface IDispatchProps {
-    toggleEditMode: (isEditMode: boolean) => void
+    handleClickProp: (isEditMode: boolean) => void
 }
 
-export interface IEditButtonOwnProps
+interface IEditButtonOwnProps
 {
     name: string;
 }
 
-interface IEditButtonProps extends IEditButtonOwnProps, IStoreState, IDispatchProps {};
+export interface IEditButtonProps extends IEditButtonOwnProps, IStoreState, IDispatchProps {};
 
 export class EditButton extends React.Component<IEditButtonProps, {}>
 {
@@ -38,7 +38,7 @@ export class EditButton extends React.Component<IEditButtonProps, {}>
     }
 
     handleOnClick(): void {
-        this.props.toggleEditMode(!this.props.isEditMode);
+        this.props.handleClickProp(!this.props.isEditMode);
     }
 }
 
@@ -47,7 +47,7 @@ function mapStateToProps (state: IStoreState): IStoreState {
 }
 function mapDispatchToProps(dispatch: any): IDispatchProps {
     return {
-        toggleEditMode: (isEditMode: boolean) => dispatch(toggleEditMode(isEditMode))
+        handleClickProp: (isEditMode: boolean) => dispatch(toggleEditMode(isEditMode))
     };
 }
 

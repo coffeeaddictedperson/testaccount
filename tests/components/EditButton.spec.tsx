@@ -1,36 +1,45 @@
 import React from 'react';
-import { configure, shallow } from 'enzyme';
-import { expect } from 'chai';
+import {configure, shallow, ShallowWrapper} from 'enzyme';
+import chai from 'chai';
+
+import * as Sinon from 'sinon';
 import Adapter from 'enzyme-adapter-react-15'
 
-import {EditButton} from '../../src/js/components/EditButton';
+import {IEditButtonProps, EditButton} from '../../src/js/components/EditButton';
 
+
+const should = chai.should();
 
 configure({ adapter: new Adapter() });
 
 describe('Test: EditButton', function() {
 
+    let propsMock: IEditButtonProps;
+    beforeEach(() => {
+        propsMock = {
+            name: 'Test Name',
+            handleClickProp: () => {},
+            isEditMode: false
+        };
+    });
+
 
     it('Should have: Edit icon', function() {
-        const wrapper = shallow(<EditButton name='Test Name' isEditMode={false} toggleEditMode = {():boolean=> false } />);
+        const wrapper: ShallowWrapper    = shallow(<EditButton {...propsMock} />);
+        const icon: ShallowWrapper       = wrapper.find('.material-icons');
 
-        const icon = wrapper.find('.material-icons');
         // icon: exist
-        expect(icon).to.have.lengthOf(1);
+        icon.should.have.length(1);
         // icon: preview
-        expect(icon.text()).to.be.equal('edit');
+        icon.text().should.be.equal('edit');
     });
 
-
-/*
-    it('Should have predefined property "name"', function() {
-        const wrapper = shallow(<EditButton name={'Test Name'} />);
-        expect(wrapper.props().name).to.equal('Test Name');
-    });
-
-    it('Should return .name value', function() {
-        const wrapper = shallow(<EditButton name={'Test Name'} />);
+    it('On click should trigger method from props with values opposite to args["IsEditMode"]', function() {
+        const spy_handleClick: Sinon.SinonSpy    = Sinon.spy(propsMock, 'handleClickProp');
+        const wrapper: ShallowWrapper       = shallow(<EditButton {...propsMock} />);
         wrapper.simulate('click');
+        spy_handleClick.calledOnce.should.be.true;
+        spy_handleClick.getCall(0).args.should.not.be.equal(propsMock.isEditMode);
     });
-*/
+
 });
