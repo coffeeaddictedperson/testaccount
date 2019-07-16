@@ -4,6 +4,7 @@ import { IStoreState } from './types/index';
 export const store = createStore<IStoreState, any, any, any> (
     toggleEditMode,
     {
-        isEditMode: false
+        isEditMode: false,
+        previewImage: '/images/profile.png'
     }
 );

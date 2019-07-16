@@ -1,17 +1,13 @@
 import * as React from 'react';
 import {connect } from "react-redux";
-import { store } from "../index";
 import { IStoreState } from '../types';
 import { UserDataView } from './UserDataView';
 
-interface IOwnAppWrapperProps {
+interface IOwnAppWrapperProps { }
+interface IStateProps { isEditMode: boolean };
+interface IAppWrapper extends IOwnAppWrapperProps, IStateProps {};
 
-}
-
-interface IAppWrapper extends IOwnAppWrapperProps, IStoreState {};
-
-
-class ConnectAppWrapper extends React.Component<IAppWrapper, {}>
+export class AppWrapper extends React.Component<IAppWrapper, {}>
 {
     public render(): JSX.Element
     {
@@ -20,13 +16,13 @@ class ConnectAppWrapper extends React.Component<IAppWrapper, {}>
                 <div className={`col l${this.props.isEditMode ? 6 : 12}`}>
                     <UserDataView/>
                 </div>
-                {this.props.isEditMode && <div className="col l6"><UserDataView/></div>}
+                {this.props.isEditMode && <div className="col l6">Edit Form</div>}
             </div>
         );
     }
 }
 
-function mapStateToProps (state: IStoreState): IStoreState {
+function mapStateToProps (state: IStoreState): IStateProps {
     return {isEditMode: state.isEditMode}
 }
-export const AppWrapper = connect(mapStateToProps)(ConnectAppWrapper);
+export default connect(mapStateToProps)(AppWrapper);

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Provider} from "react-redux";
 import { store } from "./index";
-import {AppWrapper} from "./components/AppWrapper";
+import AppWrapper from "./components/AppWrapper";
 
 interface IMain {
 

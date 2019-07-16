@@ -1,7 +1,7 @@
 import * as React from "react";
 import './../../styles/UserDataPreview';
 
-import {PreviewImage} from './PreviewImage';
+import PreviewImage from './PreviewImage';
 import {UserInfo} from './UserInfo';
 import {UserStatistic} from './UserStatistic';
 
@@ -19,7 +19,7 @@ export class UserDataView
                 <div className="row">
                     <div className="col s4 l2">
                         <PreviewImage
-                            preview_url='/images/profile.png'/>
+                            previewImage='/images/profile.png'/>
                     </div>
                     <div className="col s8 l10">
                         <div className="card-content white-text">

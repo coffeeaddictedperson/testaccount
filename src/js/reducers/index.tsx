@@ -7,7 +7,7 @@ export function toggleEditMode(state: IStoreState, action: IToggleEditMode): ISt
 
     switch (action.type) {
         case TOGGLE_EDIT_MODE:
-            stateOut.isEditMode = action.isEditMode;
+            stateOut.isEditMode = !state.isEditMode;
     }
 
     console.log('@Reduced: stateIn', state, 'stateOut:', stateOut);
