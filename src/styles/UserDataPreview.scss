@@ -5,3 +5,13 @@
   display: inline-block;
   vertical-align: middle;
 }
+.custom_label-pos {
+  position: relative;
+  padding-top: 20px;
+  & label {
+    top: -30px;
+    font-size: 12px;
+    line-height: 20px;
+  }
+}
+

@@ -4,22 +4,27 @@
   "author": "Tash",
   "main": "index.js",
   "license": "ISC",
-
   "scripts": {
     "build": "webpack --mode production",
     "build-dev": "webpack --mode development",
     "build-watch": "webpack --mode development --watch",
     "start": "node index.js",
-
     "test": "mocha --require ts-node/register ./test/**/*.spec.tsx",
     "coverage": "npx nyc mocha --require ts-node/register ./test/**/*.spec.tsx"
   },
-
   "description": "Test Account",
   "nyc": {
-    "extension": [".ts", ".tsx"],
-    "include": ["src"],
-    "reporter": ["text","html"],
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "include": [
+      "src"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ],
     "all": true,
     "check-coverage": true,
     "statements": 10,
@@ -27,7 +32,6 @@
     "branches": 10,
     "lines": 10
   },
-
   "dependencies": {
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",

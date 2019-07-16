@@ -5,7 +5,7 @@ import chai from 'chai';
 import * as Sinon from 'sinon';
 import Adapter from 'enzyme-adapter-react-15'
 
-import {    IEditButtonProps, IStateProps,
+import {    IEditButtonProps,
             EditButton,
             mapStateToProps, mapDispatchToProps
     } from '../../src/js/components/EditButton';

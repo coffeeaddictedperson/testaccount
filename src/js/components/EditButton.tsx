@@ -4,11 +4,11 @@ import {connect} from 'react-redux';
 import { IStoreState } from '../types/index';
 import { toggleEditMode } from '../actions/editMode';
 
-interface IDispatchProps { handleClickProp: () => void }
+interface IEditButtonDispatchProps { handleClickProp: () => void }
 interface IEditButtonOwnProps { name: string; }
 
-export interface IStateProps { isEditMode: boolean }
-export interface IEditButtonProps extends IEditButtonOwnProps, IStateProps, IDispatchProps {};
+export interface IEditButtonStateProps { isEditMode: boolean }
+export interface IEditButtonProps extends IEditButtonOwnProps, IEditButtonStateProps, IEditButtonDispatchProps {};
 
 export class EditButton extends React.Component<IEditButtonProps, {}>
 {
@@ -37,10 +37,10 @@ export class EditButton extends React.Component<IEditButtonProps, {}>
     }
 }
 
-export function mapStateToProps (state: IStoreState): IStateProps {
+export function mapStateToProps (state: IStoreState): IEditButtonStateProps {
     return {isEditMode: state.isEditMode}
 }
-export function mapDispatchToProps(dispatch: any): IDispatchProps {
+export function mapDispatchToProps(dispatch: any): IEditButtonDispatchProps {
     return {
         handleClickProp: () => dispatch(toggleEditMode())
     };
