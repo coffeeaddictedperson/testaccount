@@ -2,7 +2,7 @@ import * as React from "react";
 
 import EditButton from './EditButton';
 
-interface IPreviewImageStateProps {
+export interface IPreviewImageStateProps {
     preview_url: string
 }
 
