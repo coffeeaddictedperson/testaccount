@@ -24,17 +24,14 @@ describe('Test: EditButton', function() {
     });
 
 
-    it('Should have: Edit icon', function() {
+    it('Should render "Edit" icon', function() {
         const wrapper: ShallowWrapper    = shallow(<EditButton {...propsMock} />);
         const icon: ShallowWrapper       = wrapper.find('.material-icons');
-
-        // icon: exist
         icon.should.have.length(1);
-        // icon: preview
         icon.text().should.be.equal('edit');
     });
 
-    it('On click should trigger method from props with values opposite to args["IsEditMode"]', function() {
+    it('On click should trigger props.method with value opposite to args["IsEditMode"]', function() {
         const spy_handleClick: Sinon.SinonSpy    = Sinon.spy(propsMock, 'handleClickProp');
         const wrapper: ShallowWrapper       = shallow(<EditButton {...propsMock} />);
         wrapper.simulate('click');
