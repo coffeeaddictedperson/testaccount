@@ -1,5 +1,5 @@
 import * as React from "react";
-import {EditButton} from './EditButton';
+import EditButton from './EditButton';
 
 export interface IUserInfo
 {

@@ -15,7 +15,7 @@ export interface IEditButtonOwnProps
 
 interface IEditButtonProps extends IEditButtonOwnProps, IStoreState, IDispatchProps {};
 
-class ConnectedEditButton extends React.Component<IEditButtonProps, {}>
+export class EditButton extends React.Component<IEditButtonProps, {}>
 {
     constructor(props: IEditButtonProps) {
         super(props);
@@ -50,4 +50,5 @@ function mapDispatchToProps(dispatch: any): IDispatchProps {
         toggleEditMode: (isEditMode: boolean) => dispatch(toggleEditMode(isEditMode))
     };
 }
-export const EditButton = connect(mapStateToProps, mapDispatchToProps)(ConnectedEditButton);
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditButton);
