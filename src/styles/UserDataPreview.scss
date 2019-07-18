@@ -7,11 +7,16 @@
 }
 .custom_label-pos {
   position: relative;
-  padding-top: 20px;
+  padding: 20px;
+
   & label {
     top: -30px;
     font-size: 12px;
     line-height: 20px;
   }
-}
 
+  h5 {
+    margin: 0 0 1em;
+    padding: 0 0.75rem;
+  }
+}

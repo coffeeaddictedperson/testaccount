@@ -1,14 +1,14 @@
+import {IFieldItems} from '../config/userInfo';
 import * as constants from '../constants/action-types';
 
 //interfaces
 export interface IToggleEditMode {
     type: constants.TOGGLE_EDIT_MODE;
 }
-export interface IUpdateFieldMethod {
-    name: string;
-    value: string | number;
+export interface IUpdateFields {
+    editedValues: IFieldItems;
 }
-export interface IUpdateField extends IUpdateFieldMethod {
+export interface IUpdateUserInfo extends IUpdateFields {
     type: constants.UPDATE_FIELD;
 }
 
@@ -18,10 +18,12 @@ export function toggleEditMode(): IToggleEditMode {
         type: constants.TOGGLE_EDIT_MODE
     };
 }
-export function updateField(props: IUpdateFieldMethod): IUpdateField {
+
+export function updateUserInfo(editedValues: IFieldItems): IUpdateUserInfo {
+    console.log('updateUserInfo', editedValues)
     return {
         type: constants.UPDATE_FIELD,
-        name: props.name,
-        value: props.value
+        // поправити ось тут на обект з полями
+        editedValues: editedValues
     };
 }

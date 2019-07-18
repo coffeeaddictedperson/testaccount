@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {connect } from "react-redux";
 import { IStoreState } from '../types';
-import { UserDataView } from './UserDataView';
-import { UserInfoForm } from './UserInfoForm';
+import UserDataView from './UserDataView';
+import UserInfoForm from './UserInfoForm';
 
 interface IOwnAppWrapperProps { }
 interface IStateProps { isEditMode: boolean };
@@ -17,7 +17,7 @@ export class AppWrapper extends React.Component<IAppWrapper, {}>
                 <div className={`col l${this.props.isEditMode ? 6 : 12}`}>
                     <UserDataView/>
                 </div>
-                {this.props.isEditMode && <div className="col l6"><UserInfoForm /></div>}
+                {this.props.isEditMode ? <div className="col l6"><UserInfoForm /></div> : ''}
             </div>
         );
     }
