@@ -5,16 +5,20 @@ import { IStoreState } from '../types';
 interface IWeatherWidgetStateProps { }
 interface IWeatherWidgetProps extends IWeatherWidgetStateProps, IWeatherWidgetStateProps { }
 
-interface IWeatherWidgetState {
-    error: string;
-    isLoaded: boolean;
+
+interface IWeatherWidgetData {
+    error?: string;
     icon?: string;
     temp?: number;
     sunset?: number;
     sunrise?: number;
     description?: string;
     general?: string;
-};
+}
+
+interface IWeatherWidgetState extends IWeatherWidgetData {
+    isLoaded: boolean;
+}
 
 export class WeatherWidget extends React.Component<IWeatherWidgetProps, IWeatherWidgetState>
 {
@@ -34,14 +38,14 @@ export class WeatherWidget extends React.Component<IWeatherWidgetProps, IWeather
         if(!isLoaded) return <div>...</div>;
 
         return (
-            <div className={`row custom_weather ${general.toLowerCase()}`}>
+            <div className={`row custom_weather ${general && general.toLowerCase()}`}>
                 <div className="col l2">
-                    <div className="custom_weather-icon"><img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} /></div>
+                    {icon && <div className="custom_weather-icon"><img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} /></div>}
                 </div>
                 <div className="col l4 custom_weather-text">{temp} °C <br/> {description}</div>
                 <div className="col l6">
-                    Sunrise: {this.getTime(sunrise)} <br/>
-                    Sunset: {this.getTime(sunset)}
+                    Sunrise: {sunrise && this.getTime(sunrise)} <br/>
+                    Sunset: {sunset && this.getTime(sunset)}
                 </div>
             </div>
         );
@@ -60,7 +64,7 @@ export class WeatherWidget extends React.Component<IWeatherWidgetProps, IWeather
     }
 
     private getApiEndpoint():string {
-        return 'https://api.openweathermap.org/data/2.5/weather?q=Kiev&APPID=c47a0f7b73394115eea341586e74e47b&units=metric';
+        return '/get-weather';
     }
 
     private getWeather() {
@@ -69,15 +73,16 @@ export class WeatherWidget extends React.Component<IWeatherWidgetProps, IWeather
             .then(this.handleResponse.bind(this), this.handleError.bind(this))
     }
 
-    private handleResponse(result: object): void {
+    private handleResponse(result: IWeatherWidgetData): void {
+
         this.setState({
             isLoaded: true,
-            general: result['weather'][0].main,
-            description: result['weather'][0].description,
-            icon: result['weather'][0].icon,
-            temp: result['main'].temp,
-            sunset: result['sys'].sunset,
-            sunrise: result['sys'].sunrise
+            general: result.general,
+            description: result.description,
+            icon: result.icon,
+            temp: result.temp,
+            sunset: result.sunset,
+            sunrise: result.sunrise
         });
     }
     private handleError(error): void {
