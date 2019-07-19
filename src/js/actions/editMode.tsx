@@ -1,4 +1,4 @@
-import {IFieldItems} from '../config/userInfo';
+import {IFieldItems} from '../config/userConfig';
 import * as constants from '../constants/action-types';
 
 //interfaces
@@ -20,7 +20,6 @@ export function toggleEditMode(): IToggleEditMode {
 }
 
 export function updateUserInfo(editedValues: IFieldItems): IUpdateUserInfo {
-    console.log('updateUserInfo', editedValues)
     return {
         type: constants.UPDATE_FIELD,
         // поправити ось тут на обект з полями

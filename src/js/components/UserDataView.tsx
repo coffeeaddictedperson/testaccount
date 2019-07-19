@@ -1,12 +1,12 @@
 import * as React from "react";
-import './../../styles/UserDataPreview';
 
 import PreviewImage from './PreviewImage';
 import {UserInfo} from './UserInfo';
 import {UserStatistic} from './UserStatistic';
-import { IFieldItems } from "../config/userInfo";
+import { IFieldItems } from "../config/userConfig";
 import { IStoreState } from '../types';
 import {connect} from "react-redux";
+import EditButton from "./EditButton";
 
 export interface IUserDataViewStateProps extends IFieldItems {};
 
@@ -15,20 +15,19 @@ export interface IUserDataViewProps extends IUserDataViewStateProps {};
 export class UserDataView extends React.Component<IUserDataViewProps, {}> {
     public render(): JSX.Element
     {
-        console.log('UserDataView', this.props)
-
         return (
-            <div className="card blue-grey darken-1">
+            <div className="card custom_bg">
                 <div className="row">
                     <div className="col s4 l2">
                         <PreviewImage
-                            previewImage={this.props.previewImage}/>
+                            gender={this.props.gender}/>
                     </div>
                     <div className="col s8 l10">
-                        <div className="card-content white-text">
+                        <div className="card-content white-text custom_pos-rel">
                             <UserInfo firstName={this.props.firstName}
                                       lastName={this.props.lastName}
                                       info={this.props.info} />
+                            <EditButton name={"PreviewImage"} />
                         </div>
                         <div className="card-action white-text">
                             <UserStatistic />
@@ -42,7 +41,7 @@ export class UserDataView extends React.Component<IUserDataViewProps, {}> {
 
 export function mapStateToProps (state: IStoreState): IUserDataViewStateProps {
     return {
-        previewImage: state.previewImage,
+        gender: state.gender,
         firstName: state.firstName,
         lastName: state.lastName,
         info: state.info

@@ -6,7 +6,8 @@ const devMode = process.env.NODE_ENV !== 'production';
 module.exports = {
     entry: {
         app: ['./src/js/App.ts'],
-        vendor: ['react', 'react-dom']
+        vendor: ['react', 'react-dom'],
+        styles: ['./src/styles/UserDataPreview.scss']
     },
     output: {
         path: path.resolve(__dirname, 'public'),

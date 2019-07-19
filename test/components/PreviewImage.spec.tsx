@@ -4,29 +4,27 @@ import chai from 'chai';
 import Adapter from 'enzyme-adapter-react-15'
 
 import PreviewImage from '../../src/js/components/PreviewImage';
-import EditButton from '../../src/js/components/EditButton';
+import { UserGender, UserGenderPreview } from '../../src/js/config/userConfig';
 
 const should = chai.should();
 
 configure({ adapter: new Adapter() });
 
 describe('PreviewImage(Component)', function() {
-    let previewImage: string;
-    let wrapper: ShallowWrapper;
 
-    beforeEach(() =>  {
-        previewImage = 'test_url';
-        wrapper     = shallow(<PreviewImage previewImage={previewImage}/>);
-    });
-
-    it('Should render child: image with predefined url', function() {
+    it('Should render child: image female preview', function() {
+        const wrapper: ShallowWrapper   = shallow(<PreviewImage gender={UserGender.Female}/>);
         const image: ShallowWrapper     = wrapper.find('img');
 
         image.should.have.length(1);
-        image.get(0).props['src'].should.be.equal(previewImage);
+        image.get(0).props['src'].should.be.equal(UserGenderPreview.Female);
     });
 
-    it('Should render child: EditButton', function() {
-        wrapper.find(EditButton).should.have.length(1);
+    it('Should render child: image with male preview', function() {
+        const wrapper: ShallowWrapper   = shallow(<PreviewImage gender={UserGender.Male}/>);
+        const image: ShallowWrapper     = wrapper.find('img');
+
+        image.should.have.length(1);
+        image.get(0).props['src'].should.be.equal(UserGenderPreview.Male);
     });
 });

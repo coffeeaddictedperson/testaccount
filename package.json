@@ -10,28 +10,9 @@
     "build-watch": "webpack --mode development --watch",
     "start": "node index.js",
     "test": "mocha --require ts-node/register ./test/**/*.spec.tsx",
-    "coverage": "npx nyc mocha --require ts-node/register ./test/**/*.spec.tsx"
+    "coverage": "npx nyc mocha --require ts-node/register ./test/**/*.spec.tsx ./src/**/*.tsx"
   },
   "description": "Test Account",
-  "nyc": {
-    "extension": [
-      ".ts",
-      ".tsx"
-    ],
-    "include": [
-      "src"
-    ],
-    "reporter": [
-      "text",
-      "html"
-    ],
-    "all": true,
-    "check-coverage": true,
-    "statements": 10,
-    "functions": 10,
-    "branches": 10,
-    "lines": 10
-  },
   "dependencies": {
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
@@ -51,7 +32,7 @@
     "node-sass": "^4.12.0",
     "path": "^0.12.7",
     "react": "^15.6.2",
-    "react-dom": "^15.6.0",
+    "react-dom": "^15.6.2",
     "react-materialize": "^3.3.3",
     "react-redux": "^5.1.1",
     "redux": "^4.0.4",

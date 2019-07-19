@@ -5,7 +5,13 @@
   display: inline-block;
   vertical-align: middle;
 }
-.custom_label-pos {
+
+.custom_align-center {
+  text-align: center;
+}
+
+
+.custom_fields-position {
   position: relative;
   padding: 20px;
 
@@ -15,8 +21,25 @@
     line-height: 20px;
   }
 
-  h5 {
+  & h5 {
     margin: 0 0 1em;
     padding: 0 0.75rem;
   }
+
+  & .switch {
+    margin: 0 0 16px 0.75rem;
+  }
+
+  & .helper-text {
+    min-height: 0;
+  }
+}
+
+.custom_bg {
+  background: #473426 url("/images/bg.jpg") no-repeat right top;
+  background-size: cover;
+}
+.custom_bg-blurred {
+  //background: #473426 url("/images/blurred-bg.jpg") no-repeat right top;
+  //background-size: cover;
 }

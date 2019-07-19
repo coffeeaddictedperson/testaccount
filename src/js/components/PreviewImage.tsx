@@ -1,17 +1,27 @@
 import * as React from "react";
 
-import EditButton from './EditButton';
+import { UserGender, UserGenderPreview } from '../config/userConfig';
 
 export interface IPreviewImageStateProps {
-    previewImage: string
+    gender: UserGender;
 }
 export default class PreviewImage extends React.Component<IPreviewImageStateProps, {}>
 {
     public render(): JSX.Element {
         return (
             <div className="card-image custom_pos-rel">
-                <img src={this.props.previewImage} alt="" />
-                <EditButton name={"PreviewImage"} />
+                <img src={this.getPreview()} alt="" />
             </div>)
+    }
+
+    private getPreview() {
+        const gender = this.props.gender;
+        switch (gender){
+            case UserGender.Female:
+                return UserGenderPreview.Female;
+            case UserGender.Male:
+            default:
+                return UserGenderPreview.Male;
+        }
     }
 }
