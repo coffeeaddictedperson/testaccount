@@ -82,10 +82,8 @@ export class UserInfoForm extends React.Component<IUserInfoForm, IUserInfoFormSt
     public render(): JSX.Element {
 
         return (
-            <div className="card custom_bg-blurred">
+            <div className="card custom_bg-form">
                 <div className="row custom_fields-position">
-                    <h5 className="custom_title">Please edit your info</h5>
-
                     {this.getEditFields().map(this.getField.bind(this))}
                     <div className="custom_align-center">
                         <Button onClick={this.handleOnClick.bind(this)}>

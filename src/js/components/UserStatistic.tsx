@@ -17,6 +17,7 @@ export class UserStatistic extends React.Component<IUserStatistic, {}>
                     Loyalty bonuses level:
                     <BonusesLevel value={4.5}/>
                 </li>
+                <li>With: 15 years</li>
             </ul>
         )
     }
