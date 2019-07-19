@@ -2,7 +2,7 @@ import * as React from "react";
 import {TextInput, Textarea, Button, Icon, Switch} from 'react-materialize';
 import {IStoreState} from './../types/';
 import {FieldTypes, IFieldItem, IFieldItems, fieldsConfig} from "../config/userConfig";
-import {IUpdateFields, updateUserInfo} from "../actions/editMode";
+import {IUpdateFields, updateUserInfo} from "../actions/Edit";
 import {connect} from "react-redux";
 
 interface IUserInfoFormDispatchProps {
@@ -15,7 +15,7 @@ interface IUserInfoFormState extends IUpdateFields {};
 
 export class UserInfoForm extends React.Component<IUserInfoForm, IUserInfoFormState>
 {
-    constructor(props){
+    constructor(props: IUserInfoForm){
         super(props);
         this.state = {
             editedValues: {}
@@ -54,9 +54,11 @@ export class UserInfoForm extends React.Component<IUserInfoForm, IUserInfoFormSt
 
         if(itemProps.type === FieldTypes.Switch) {
 
-            const checkSource = typeof this.state.editedValues[itemProps.name] !== 'undefined'
-                ? this.state.editedValues[itemProps.name]
-                : this.props[itemProps.name];
+            const checkSource: string =
+                typeof this.state.editedValues[itemProps.name] !== 'undefined'
+                    ? this.state.editedValues[itemProps.name]
+                    : this.props[itemProps.name]
+            ;
             const isChecked = checkSource === itemProps.options[0];
             ownFields = {
                 onLabel: itemProps.options[0],
@@ -68,7 +70,7 @@ export class UserInfoForm extends React.Component<IUserInfoForm, IUserInfoFormSt
         } else {
             ownFields = {
                 label: itemProps.label,
-                defaultValue: this.props[itemProps.name] && this.props[itemProps.name] || '',
+                defaultValue: this.props[itemProps.name],
                 onChange: this.editField.bind(this),
                 s: 12
             };

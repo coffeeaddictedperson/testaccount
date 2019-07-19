@@ -2,7 +2,7 @@ import * as React from 'react';
 import {connect} from 'react-redux';
 
 import { IStoreState } from '../types/index';
-import { toggleEditMode } from '../actions/editMode';
+import { toggleEditMode } from '../actions/Edit';
 
 interface IEditButtonDispatchProps { handleClickProp: () => void }
 interface IEditButtonOwnProps { name: string; }
@@ -21,7 +21,7 @@ export class EditButton extends React.Component<IEditButtonProps, {}>
         const {name, isEditMode} = this.props;
 
         if(isEditMode) {
-            return (<div />);
+            return (null);
         }
 
         return (
@@ -42,7 +42,9 @@ export function mapStateToProps (state: IStoreState): IEditButtonStateProps {
 }
 export function mapDispatchToProps(dispatch: any): IEditButtonDispatchProps {
     return {
-        handleClickProp: () => dispatch(toggleEditMode())
+        handleClickProp: () => {
+            return dispatch(toggleEditMode())
+        }
     };
 }
 

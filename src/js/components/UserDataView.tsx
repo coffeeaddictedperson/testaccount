@@ -18,16 +18,16 @@ export class UserDataView extends React.Component<IUserDataViewProps, {}> {
         return (
             <div className="card custom_bg">
                 <div className="row">
-                    <div className="col s4 l2">
+                    <div className="col s4 l2 custom_pos-rel">
                         <PreviewImage
                             gender={this.props.gender}/>
+                        <EditButton name={"PreviewImage"} />
                     </div>
                     <div className="col s8 l10">
-                        <div className="card-content white-text custom_pos-rel">
+                        <div className="card-content white-text">
                             <UserInfo firstName={this.props.firstName}
                                       lastName={this.props.lastName}
                                       info={this.props.info} />
-                            <EditButton name={"PreviewImage"} />
                         </div>
                         <div className="card-action white-text">
                             <UserStatistic />

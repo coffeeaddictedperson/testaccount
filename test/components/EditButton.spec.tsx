@@ -9,8 +9,9 @@ import {    IEditButtonProps,
             EditButton,
             mapStateToProps, mapDispatchToProps
     } from '../../src/js/components/EditButton';
-import { IToggleEditMode, toggleEditMode } from "../../src/js/actions/editMode";
-import { IStoreState } from '../../src/js/types/index';
+
+import { IToggleEditMode, toggleEditMode } from "../../src/js/actions/Edit";
+import { IStoreState } from '../../src/js/types';
 
 
 const should = chai.should();
@@ -28,11 +29,10 @@ describe('EditButton(Component)', function() {
         };
     });
 
-    it('Should render empty div for turned_ON EditMode', function() {
+    it('Should return null if editMode is turned_ON', function() {
         propsMock.isEditMode = true;
         const wrapper: ShallowWrapper    = shallow(<EditButton {...propsMock} />);
-
-        wrapper.children().should.have.length(0);
+        should.not.exist(wrapper.type());
     });
 
     it('Should render "Edit" icon', function() {
@@ -68,6 +68,5 @@ describe('EditButton(Component)', function() {
 
         const dispatchArgs: Sinon.SinonSpyCall = dispatch.getCall(0);
         dispatchArgs.lastArg.should.deep.equal(toggleArgs);
-
     });
 });

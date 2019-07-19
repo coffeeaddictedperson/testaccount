@@ -8,7 +8,7 @@
     "build": "webpack --mode production",
     "build-dev": "webpack --mode development",
     "build-watch": "webpack --mode development --watch",
-    "start": "node index.js",
+    "start": "webpack --mode production && node index.js",
     "test": "mocha --require ts-node/register ./test/**/*.spec.tsx",
     "coverage": "npx nyc mocha --require ts-node/register ./test/**/*.spec.tsx ./src/**/*.tsx"
   },
@@ -17,6 +17,7 @@
     "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
+    "@types/materialize-css": "^1.0.6",
     "@types/react": "^16.8.23",
     "@types/react-dom": "^16.8.4",
     "@types/redux": "^3.6.0",

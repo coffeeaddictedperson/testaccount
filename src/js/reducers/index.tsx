@@ -1,4 +1,4 @@
-import { IToggleEditMode, IUpdateUserInfo } from '../actions/editMode';
+import { IToggleEditMode, IUpdateUserInfo } from '../actions/Edit';
 import { IStoreState } from '../types/index';
 import { TOGGLE_EDIT_MODE, UPDATE_FIELD } from '../constants/action-types';
 

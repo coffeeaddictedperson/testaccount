@@ -1,7 +1,7 @@
 import React from 'react';
 import {configure, shallow, ShallowWrapper} from 'enzyme';
 import chai from 'chai';
-import Adapter from 'enzyme-adapter-react-15'
+import Adapter from 'enzyme-adapter-react-15';
 
 import PreviewImage from '../../src/js/components/PreviewImage';
 import { UserGender, UserGenderPreview } from '../../src/js/config/userConfig';

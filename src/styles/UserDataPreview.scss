@@ -10,7 +10,6 @@
   text-align: center;
 }
 
-
 .custom_fields-position {
   position: relative;
   padding: 20px;
@@ -38,8 +37,7 @@
 .custom_bg {
   background: #473426 url("/images/bg.jpg") no-repeat right top;
   background-size: cover;
-}
-.custom_bg-blurred {
-  //background: #473426 url("/images/blurred-bg.jpg") no-repeat right top;
-  //background-size: cover;
+  &.card .card-action {
+    border-color: #d4b9a2;
+  }
 }
