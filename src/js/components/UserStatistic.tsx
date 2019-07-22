@@ -1,24 +1,25 @@
 import * as React from "react";
 import {BonusesLevel} from './BonusesLevel';
+import {IUserGeneralData, IStoreState} from "../types";
+import {connect} from "react-redux";
 
-export interface IUserStatistic
-{
-}
-
-
-export class UserStatistic extends React.Component<IUserStatistic, {}>
+export class UserStatistic extends React.Component<IUserGeneralData, IUserGeneralData>
 {
     public render(): JSX.Element {
         return (
             <ul>
-                <li>Current Plan: Ultimate</li>
-                <li>Balance: 15.04$</li>
+                <li>Current Plan: {this.props.plan}</li>
+                <li>Balance: {this.props.balance}$</li>
                 <li>
                     Loyalty bonuses level:
-                    <BonusesLevel value={4.5}/>
+                    <BonusesLevel value={this.props.loyalty}/>
                 </li>
-                <li>With: 15 years</li>
             </ul>
         )
     }
 }
+
+function mapStateToProps (state: IStoreState): IUserGeneralData {
+    return state as IUserGeneralData;
+}
+export default connect(mapStateToProps)(UserStatistic);

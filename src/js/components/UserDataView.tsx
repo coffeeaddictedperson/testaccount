@@ -2,15 +2,14 @@ import * as React from "react";
 
 import PreviewImage from './PreviewImage';
 import {UserInfo} from './UserInfo';
-import {UserStatistic} from './UserStatistic';
+import UserStatistic from './UserStatistic';
 import { IFieldItems } from "../config/userConfig";
 import { IStoreState } from '../types';
 import {connect} from "react-redux";
 import EditButton from "./EditButton";
 
-export interface IUserDataViewStateProps extends IFieldItems {};
-
-export interface IUserDataViewProps extends IUserDataViewStateProps {};
+export interface IUserDataViewStateProps extends IFieldItems {}
+export interface IUserDataViewProps extends IUserDataViewStateProps {}
 
 export class UserDataView extends React.Component<IUserDataViewProps, {}> {
     public render(): JSX.Element
@@ -19,8 +18,7 @@ export class UserDataView extends React.Component<IUserDataViewProps, {}> {
             <div className="card custom_bg">
                 <div className="row">
                     <div className="col s4 l2 custom_pos-rel">
-                        <PreviewImage
-                            gender={this.props.gender}/>
+                        <PreviewImage gender={this.props.gender} />
                         <EditButton name={"PreviewImage"} />
                     </div>
                     <div className="col s8 l10">

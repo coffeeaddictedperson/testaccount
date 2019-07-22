@@ -1,17 +1,16 @@
 import * as React from "react";
 import {TextInput, Textarea, Button, Icon, Switch} from 'react-materialize';
-import {IStoreState} from './../types/';
+import {IStoreState} from '../types';
 import {FieldTypes, IFieldItem, IFieldItems, fieldsConfig} from "../config/userConfig";
 import {IUpdateFields, updateUserInfo} from "../actions/Edit";
 import {connect} from "react-redux";
 
 interface IUserInfoFormDispatchProps {
     handleClickProp: (editedValues: IFieldItems) => void;
-};
-interface IUserInfoFormStateProps extends IFieldItems {};
-interface IUserInfoForm extends IUserInfoFormDispatchProps, IUserInfoFormStateProps {};
+}
+interface IUserInfoForm extends IUserInfoFormDispatchProps, IFieldItems {}
 
-interface IUserInfoFormState extends IUpdateFields {};
+interface IUserInfoFormState extends IUpdateFields {}
 
 export class UserInfoForm extends React.Component<IUserInfoForm, IUserInfoFormState>
 {
@@ -120,12 +119,12 @@ export class UserInfoForm extends React.Component<IUserInfoForm, IUserInfoFormSt
 }
 
 
-export function mapStateToProps (state: IStoreState): IUserInfoFormStateProps {
+export function mapStateToProps (state: IStoreState): IFieldItems {
     const stateProps = {};
     fieldsConfig.forEach(item => {
         stateProps[item.name] = state[item.name]
     });
-    return stateProps as IUserInfoFormStateProps;
+    return stateProps as IFieldItems;
 }
 
 

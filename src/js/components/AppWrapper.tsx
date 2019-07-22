@@ -5,9 +5,9 @@ import UserDataView from './UserDataView';
 import UserInfoForm from './UserInfoForm';
 import {WeatherWidget} from './WeatherWidget';
 
-interface IOwnAppWrapperProps { };
-interface IStateProps { isEditMode: boolean };
-interface IAppWrapper extends IOwnAppWrapperProps, IStateProps {};
+interface IOwnAppWrapperProps { }
+interface IStateProps { isEditMode: boolean }
+interface IAppWrapper extends IOwnAppWrapperProps, IStateProps {}
 
 export class AppWrapper extends React.Component<IAppWrapper, {}>
 {

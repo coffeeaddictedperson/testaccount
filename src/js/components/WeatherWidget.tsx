@@ -42,8 +42,8 @@ export class WeatherWidget extends React.Component<IWeatherWidgetProps, IWeather
                 <div className="col l2">
                     {icon && <div className="custom_weather-icon"><img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} /></div>}
                 </div>
-                <div className="col l4 custom_weather-text">{temp} °C <br/> {description}</div>
-                <div className="col l6">
+                <div className="col l6 custom_weather-text">{temp} °C <br/> {description}</div>
+                <div className="col l4">
                     Sunrise: {sunrise && this.getTime(sunrise)} <br/>
                     Sunset: {sunset && this.getTime(sunset)}
                 </div>
