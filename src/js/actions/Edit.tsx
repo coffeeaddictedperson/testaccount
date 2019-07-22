@@ -22,7 +22,6 @@ export function toggleEditMode(): IToggleEditMode {
 export function updateUserInfo(editedValues: IFieldItems): IUpdateUserInfo {
     return {
         type: constants.UPDATE_FIELD,
-        // поправити ось тут на обект з полями
         editedValues: editedValues
     };
 }

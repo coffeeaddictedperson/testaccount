@@ -12,6 +12,8 @@ interface IUserInfoForm extends IUserInfoFormDispatchProps, IFieldItems {}
 
 interface IUserInfoFormState extends IUpdateFields {}
 
+
+// todo: add city selection
 export class UserInfoForm extends React.Component<IUserInfoForm, IUserInfoFormState>
 {
     constructor(props: IUserInfoForm){

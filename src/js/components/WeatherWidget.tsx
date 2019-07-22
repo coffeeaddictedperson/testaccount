@@ -5,7 +5,6 @@ import { IStoreState } from '../types';
 interface IWeatherWidgetStateProps { }
 interface IWeatherWidgetProps extends IWeatherWidgetStateProps, IWeatherWidgetStateProps { }
 
-
 interface IWeatherWidgetData {
     error?: string;
     icon?: string;
@@ -95,10 +94,9 @@ export class WeatherWidget extends React.Component<IWeatherWidgetProps, IWeather
     componentDidMount() {
         this.getWeather();
     }
-
-
 }
 
+// todo: add city selection
 function mapStateToProps (state: IStoreState): IWeatherWidgetStateProps {
     return {}
 }

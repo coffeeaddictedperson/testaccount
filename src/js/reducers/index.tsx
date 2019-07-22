@@ -20,6 +20,6 @@ export function rootReducer(state: IStoreState, action: IMergedTypes ): IStoreSt
 
     }
 
-    console.log('@Reduced: stateIn', state, 'stateOut:', stateOut);
+    //console.log('@Reduced: stateIn', state, 'stateOut:', stateOut);
     return stateOut;
 }
