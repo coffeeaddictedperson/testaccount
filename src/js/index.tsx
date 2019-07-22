@@ -13,6 +13,6 @@ export const store = createStore<IStoreState, any, any, any> (
 
         plan: 'Ultimate',
         balance: 15.05,
-        loyalty: 4.3
+        loyalty: 2.3
     }
 );

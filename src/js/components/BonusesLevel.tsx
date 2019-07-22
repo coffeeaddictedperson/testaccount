@@ -1,21 +1,21 @@
 import * as React from "react";
+import {Star} from "./Star";
 
-export interface IBonusesLevel
-{
-    value: number
-}
-
+export interface IBonusesLevel { value: number }
 
 export class BonusesLevel extends React.Component<IBonusesLevel, {}>
 {
+
     public render(): JSX.Element {
         return (
             <span className="custom_stars">
-                <i className="material-icons">star</i>
-                <i className="material-icons">star</i>
-                <i className="material-icons">star</i>
-                <i className="material-icons">star_half</i>
-                <i className="material-icons">star_border</i>
+                {
+                    Array
+                        .from(
+                            {length: 5},
+                            (x,i) => i + 1)
+                        .map((x,i):JSX.Element => <Star key={x} value={x} maxValue={this.props.value} />)
+                }
             </span>
         )
     }

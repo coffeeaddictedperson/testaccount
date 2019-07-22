@@ -12,7 +12,7 @@ import UserInfoForm from '../../src/js/components/UserInfoForm';
 
 import {IStoreState} from "../../src/js/types";
 
-describe.only('AppWrapper(Component)', function() {
+describe('AppWrapper(Component)', function() {
 
     function getWrapper(isEditMode: boolean):ShallowWrapper  {
         const mockProps: IAppWrapperStateProps  = {isEditMode: isEditMode };
