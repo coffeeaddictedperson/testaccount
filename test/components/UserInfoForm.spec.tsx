@@ -12,11 +12,11 @@ configure({ adapter: new Adapter() });
 
 describe('UserInfoForm(Component)', function() {
 
-    it('Should change with method editField', function() {
+    it.skip('Should change with method editField', function() {
 
     });
 
-    it('Should render child: image with male preview', function() {
+    it.skip('Should render child: image with male preview', function() {
 
     });
 });

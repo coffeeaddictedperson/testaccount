@@ -8,8 +8,7 @@ import { IStoreState } from '../types';
 import {connect} from "react-redux";
 import EditButton from "./EditButton";
 
-export interface IUserDataViewStateProps extends IFieldItems {}
-export interface IUserDataViewProps extends IUserDataViewStateProps {}
+export interface IUserDataViewProps extends IFieldItems {}
 
 export class UserDataView extends React.Component<IUserDataViewProps, {}> {
     public render(): JSX.Element
@@ -37,7 +36,7 @@ export class UserDataView extends React.Component<IUserDataViewProps, {}> {
     }
 }
 
-export function mapStateToProps (state: IStoreState): IUserDataViewStateProps {
+export function mapStateToProps (state: IStoreState): IUserDataViewProps {
     return {
         gender: state.gender,
         firstName: state.firstName,

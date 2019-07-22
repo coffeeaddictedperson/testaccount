@@ -4,6 +4,7 @@
 .custom_stars {
   display: inline-block;
   vertical-align: middle;
+  & .material-icons {vertical-align: bottom;}
 }
 
 .custom_align-center {

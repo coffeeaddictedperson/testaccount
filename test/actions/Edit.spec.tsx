@@ -14,6 +14,7 @@ describe('Action: Edit Form', () => {
         const toggleResult: IToggleEditMode = toggleEditMode();
 
         toggleResult.should.deep.equal(mockResults);
+        toggleResult['type'].should.be.equal('TOGGLE_EDIT_MODE');
     });
     it('Toggle Edit mode should return {type: UPDATE_FIELD}', () => {
         const editedValues: IFieldItems = {firstName: 'Test'},
@@ -24,5 +25,7 @@ describe('Action: Edit Form', () => {
 
         const toggleResult: IUpdateUserInfo = updateUserInfo(editedValues);
         toggleResult.should.deep.equal(mockResults);
+        toggleResult['type'].should.be.equal('UPDATE_FIELD');
+        toggleResult['editedValues'].firstName.should.be.equal('Test');
     });
 });

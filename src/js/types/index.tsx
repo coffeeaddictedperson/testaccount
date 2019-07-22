@@ -2,7 +2,7 @@ import {IFieldItems} from "../config/userConfig";
 
 export interface IUserGeneralData {
     plan?: string;
-    balance?: number;
+    balance: number;
     loyalty?: number;
 }
 export interface IStoreState extends IFieldItems, IUserGeneralData {

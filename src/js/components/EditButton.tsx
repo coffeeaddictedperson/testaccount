@@ -14,7 +14,6 @@ export class EditButton extends React.Component<IEditButtonProps, {}>
 {
     constructor(props: IEditButtonProps) {
         super(props);
-
         this.state = {};
     }
     public render(): JSX.Element {

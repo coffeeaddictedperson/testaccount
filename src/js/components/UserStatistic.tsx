@@ -8,18 +8,18 @@ export class UserStatistic extends React.Component<IUserGeneralData, IUserGenera
     public render(): JSX.Element {
         return (
             <ul>
-                <li>Current Plan: {this.props.plan}</li>
+                {this.props.plan ? <li className='current-plan'>Current Plan: {this.props.plan}</li> : ''}
                 <li>Balance: {this.props.balance}$</li>
-                <li>
-
-                    <BonusesLevel value={this.props.loyalty}/>
-                </li>
+                {this.props.loyalty ? <li><BonusesLevel value={this.props.loyalty}/></li> : ''}
             </ul>
         )
     }
 }
 
-function mapStateToProps (state: IStoreState): IUserGeneralData {
-    return state as IUserGeneralData;
+export function mapStateToProps (state: IStoreState): IUserGeneralData {
+    const innerState: IUserGeneralData = {balance: state.balance};
+    if(state.plan) innerState.plan = state.plan;
+    if(state.loyalty) innerState.loyalty = state.loyalty;
+    return innerState;
 }
 export default connect(mapStateToProps)(UserStatistic);
