@@ -8,31 +8,25 @@ import {IStar, StarTypes, Star} from '../../src/js/components/Star';
 
 describe.only('BonusesLevel component', () => {
 
-    it('Icon Type: getIcon should return "star" for exact value', () => {
-        const star_icon: string = Star.prototype.getIcon(1,1);
+    it('Icon Type: should return "star" for exact value', () => {
+        const star_icon: string = Star.prototype.getIcon(2,2);
         star_icon.should.be.equal('star');
     });
-    it('Icon Type: getIcon should return "star" for bigger value', () => {
-        const star_icon: string = Star.prototype.getIcon(1,2);
+    it('Icon Type: should return "star" for bigger value', () => {
+        const star_icon: string = Star.prototype.getIcon(2,2);
         star_icon.should.be.equal('star');
     });
 
-    it('Icon Type: getIcon should return "star" for bigger value', () => {
+    it('Icon Type: should return "star_half" for difference less then 0.5 point', () => {
         const star_icon: string = Star.prototype.getIcon(1.5,2);
         star_icon.should.be.equal('star_half');
     });
 
-
-
-   /* it('Should render star icon (less value)', () => {
-        const componentProps: IStar = {value: 1, maxValue: 2};
-        const wrapper: ShallowWrapper = shallow(<Star {...componentProps} />);
-        wrapper.text().should.be.equal(StarTypes.Star);
+    it('Icon Type: should return "star_border" for difference bigger then 1 point', () => {
+        const star_icon: string = Star.prototype.getIcon(0.5,2);
+        star_icon.should.be.equal('star_border');
     });
 
-    it('Should render half star icon', () => {
-        const componentProps: IStar = {value: 1, maxValue: 0.5};
-        const wrapper: ShallowWrapper = shallow(<Star {...componentProps} />);
-        wrapper.text().should.be.equal(StarTypes.HalfStar);
-    }); */
+
+    // todo: check elements
 });

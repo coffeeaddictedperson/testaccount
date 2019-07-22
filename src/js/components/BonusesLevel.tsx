@@ -14,7 +14,7 @@ export class BonusesLevel extends React.Component<IBonusesLevel, {}>
                         .from(
                             {length: 5},
                             (x,i) => i + 1)
-                        .map((x,i):JSX.Element => <Star key={x} value={x} maxValue={this.props.value} />)
+                        .map((x, i):JSX.Element => <Star key={x} iterator={x} userValue={this.props.value} />)
                 }
             </span>
         )
