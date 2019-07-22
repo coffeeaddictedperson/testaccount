@@ -9,6 +9,7 @@ export class BonusesLevel extends React.Component<IBonusesLevel, {}>
     public render(): JSX.Element {
         return (
             <span className="custom_stars">
+                Loyalty bonuses level:
                 {
                     Array
                         .from(

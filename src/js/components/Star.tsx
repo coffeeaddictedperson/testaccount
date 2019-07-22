@@ -14,8 +14,6 @@ export enum StarTypes {
 
 export class Star extends React.Component<IStar, {}>
 {
-
-
     public render(): JSX.Element {
         const iconValue: string = this.getIcon(this.props.userValue, this.props.iterator);
         return <i className="material-icons">{iconValue}</i>;

@@ -11,7 +11,7 @@ export class UserStatistic extends React.Component<IUserGeneralData, IUserGenera
                 <li>Current Plan: {this.props.plan}</li>
                 <li>Balance: {this.props.balance}$</li>
                 <li>
-                    Loyalty bonuses level:
+
                     <BonusesLevel value={this.props.loyalty}/>
                 </li>
             </ul>
