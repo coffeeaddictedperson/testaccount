@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {connect} from 'react-redux';
 
-import { IStoreState } from '../types/index';
+import { IStoreState } from '../types';
 import { toggleEditMode } from '../actions/Edit';
 
 interface IEditButtonDispatchProps { handleClickProp: () => void }
