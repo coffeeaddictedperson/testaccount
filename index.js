@@ -21,19 +21,23 @@ app.get('/get-weather', function (req, res) {
         return;
     }
 
-    const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Kiev&APPID=c47a0f7b73394115eea341586e74e47b&units=metric';
+    const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=London&APPID=c47a0f7b73394115eea341586e74e47b&units=metric';
     fetch(apiUrl)
         .then(resp => resp.json())
         .then(resp => {
             weatherCache.timestamp = Date.now();
-            weatherCache.response = {
-                general: resp['weather'][0].main,
-                description: resp['weather'][0].description,
-                icon: resp['weather'][0].icon,
-                temp: resp['main'].temp,
-                sunset: resp['sys'].sunset,
-                sunrise: resp['sys'].sunrise
-            };
+            if(!resp['weather'] || !resp['main'] || !resp['sys']) {
+                weatherCache.response = {};
+            } else {
+                weatherCache.response = {
+                    general: resp['weather'][0].main,
+                    description: resp['weather'][0].description,
+                    icon: resp['weather'][0].icon,
+                    temp: resp['main'].temp,
+                    sunset: resp['sys'].sunset,
+                    sunrise: resp['sys'].sunrise
+                };
+            }
             res.send(weatherCache.response);
         }, error => {
             res.send(error);

@@ -5,7 +5,6 @@ import Adapter from 'enzyme-adapter-react-15';
 
 import PreviewImage, {PreviewImage as protoPreviewImage} from '../../src/js/components/PreviewImage';
 import { UserGender, UserGenderPreview } from '../../src/js/config/userConfig';
-import {EditButton} from "../../src/js/components/EditButton";
 
 const should = chai.should();
 
