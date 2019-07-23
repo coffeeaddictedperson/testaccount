@@ -1,8 +1,8 @@
 import { IToggleEditMode, IUpdateUserInfo } from '../actions/Edit';
-import { IStoreState } from '../types/index';
+import { IStoreState } from '../types';
 import { TOGGLE_EDIT_MODE, UPDATE_FIELD } from '../constants/action-types';
 
-type IMergedTypes = IToggleEditMode | IUpdateUserInfo;
+export type IMergedTypes = IToggleEditMode | IUpdateUserInfo;
 
 export function rootReducer(state: IStoreState, action: IMergedTypes ): IStoreState {
     const stateOut: IStoreState = Object.assign({}, state);

@@ -18,7 +18,7 @@ const should = chai.should();
 
 configure({ adapter: new Adapter() });
 
-describe.only('EditButton(Component)', function() {
+describe('EditButton(Component)', function() {
     let propsMock: IEditButtonProps;
 
     beforeEach(() => {
@@ -34,14 +34,6 @@ describe.only('EditButton(Component)', function() {
         const wrapper: ShallowWrapper    = shallow(<EditButton {...propsMock} />);
         should.not.exist(wrapper.type());
     });
-
-    it('Should render button', function() {
-        propsMock.isEditMode = true;
-        const wrapper: ShallowWrapper    = shallow(<EditButton {...propsMock} />);
-        wrapper.render().find('button')
-    });
-
-
 
     it('Should render "Edit" icon', function() {
         const wrapper: ShallowWrapper    = shallow(<EditButton {...propsMock} />);

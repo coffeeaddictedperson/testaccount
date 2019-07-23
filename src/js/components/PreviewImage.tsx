@@ -5,7 +5,7 @@ import { UserGender, UserGenderPreview } from '../config/userConfig';
 export interface IPreviewImageStateProps {
     gender: UserGender;
 }
-export default class PreviewImage extends React.Component<IPreviewImageStateProps, {}>
+export class PreviewImage extends React.Component<IPreviewImageStateProps, {}>
 {
     public render(): JSX.Element {
         return (
@@ -25,3 +25,4 @@ export default class PreviewImage extends React.Component<IPreviewImageStateProp
         }
     }
 }
+export default PreviewImage;
